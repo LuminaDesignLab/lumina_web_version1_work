@@ -1,18 +1,21 @@
 :root{
 --color-white: #ffffff;
---color-black: #050a13;
+--color-black: #343434;
 --color-blue: #479aff;
 --color-orange: #f95700;
 --color-red:rgb(247, 64, 58);
 --color-gray: #313131;
---color-line-gray:grey;
+--color-line-gray:rgb(173, 173, 173);
+--color-gray-bright:rgb(235, 235, 235);
+--gradient-main:linear-gradient(149deg, rgba(126,122,185,1) 0%, rgba(245,182,195,1) 100%);
+--dotted-line:1px dotted rgba(188, 188, 188, 0.449);
 
 }
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'noto sans' 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'noto sans' 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
