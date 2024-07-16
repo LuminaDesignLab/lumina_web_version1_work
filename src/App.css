@@ -1,4 +1,4 @@
-/* header  */
+/* Header  */
 *{
   box-sizing: border-box ;
 }
@@ -7,7 +7,8 @@
   display:flex;
   justify-content: space-between;
   margin-top:20px;
-  border-bottom: 1px solid var(--color-line-gray);
+  padding-bottom: 10px;
+  /* border-bottom: 1px solid var(--color-line-gray); */
 }
 .navbar_logo_container{
   display:flex;
@@ -33,12 +34,28 @@
 .navbar_item{
   padding:5px 20px;
   margin : auto 0;
+
  
+}
+
+.navbar_item.contact::after{
+ 
+  content:"혜택";
+ 
+  background-color:var(--color-red);
+  color:var(--color-white);
+  padding:5px 5px;
+  border-radius: 30px;
+  font-size:.7rem;
+  font-weight: 700;
+  position:absolute;
+  top:20px;
+
 }
 .navbar_item:hover{
   color:gray;
 }
-.red_bubble{
+/* .red_bubble{
   position:absolute;
   top:13px;
   right: 7px;
@@ -48,4 +65,82 @@
   border-radius: 30px;
   font-size:.7rem;
   font-weight: 700;
+ 
+} */
+
+/* Section */
+
+.section{
+  height:400px;
+
+}
+.section.first{
+background: rgb(126,122,185);
+background: linear-gradient(149deg, rgba(126,122,185,1) 0%, rgba(245,182,195,1) 100%);
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.section_first_img{
+  width:250px;
+}
+
+/* Shape Divider */
+.custom-shape-divider-bottom-1721098286 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1721098286 svg {
+  position: relative;
+  display: block;
+  width: calc(216% + 1.3px);
+  height: 42px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1721098286 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* Section Second */
+.section.second{
+  margin-top:40px;
+  background-color:rgb(71, 65, 152);
+}
+.section.third{
+  background-color:yellow;
+}
+.section_title{
+  text-align: center;
+}
+
+
+
+
+/* Responsible screen size  */
+
+@media  screen and (max-width:478px) {
+  .navbar_item{
+    padding:5px 5px;
+  }
+  .red_bubble{
+    font-size: 0.5rem;
+  }
+  .custom-shape-divider-bottom-1721098286.divider{
+    display: none;
+  }
+}
+@media screen and (max-width:337px) {
+  .navbar_logo_subtext{
+    font-size:0.5rem;
+  }
 }
