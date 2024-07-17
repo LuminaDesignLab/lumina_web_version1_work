@@ -19,9 +19,10 @@ function App() {
   const scrollableDivRef = useRef(null);
 
   const scrollLeft = () => {
+    console.log("left click");
     if (scrollableDivRef.current) {
       scrollableDivRef.current.scrollBy({
-        left: -100, // 스크롤 양
+        left: -200, // 스크롤 양
         behavior: "smooth", // 부드러운 스크롤
       });
       // console.log(scrollableDivRef.current.scrollBy);
@@ -29,9 +30,10 @@ function App() {
   };
 
   const scrollRight = () => {
+    console.log("right click");
     if (scrollableDivRef.current) {
       scrollableDivRef.current.scrollBy({
-        left: 100, // 스크롤 양
+        left: 200, // 스크롤 양
         behavior: "smooth", // 부드러운 스크롤
       });
     }
@@ -58,26 +60,27 @@ function App() {
               <Section2 />
               <Section3 />
               <Section4 />
-              <section className="g2g_projects_container">
+              <section className="section_g2g_projects">
                 <h1 className="g2g_projects_h1">Projects</h1>
                 <div className="scroll_button_container">
                   <div className="scroll_button_box">
                     <span className="scroll_button" onClick={scrollLeft}>
                       ˂
                     </span>
-                    <span className="scroll_button" conClick={scrollRight}>
+                    <span className="scroll_button" onClick={scrollRight}>
                       ˃
                     </span>
                   </div>
                 </div>
-
-                <div className="g2g_projects_box" ref={scrollableDivRef}>
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
+                <div className="g2g_projects_container">
+                  <div className="g2g_projects_box" ref={scrollableDivRef}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
                 </div>
               </section>
             </>
@@ -228,11 +231,7 @@ function Section4() {
 }
 
 function Card() {
-  return (
-    <>
-      <div className="card_container"></div>
-    </>
-  );
+  return <div className="card_container"></div>;
 }
 function Footer() {
   return (
