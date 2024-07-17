@@ -56,7 +56,7 @@
   border-radius: 20px;
   -webkit-box-shadow: 14px 13px 31px -24px rgba(0,0,0,0.75);
   -moz-box-shadow: 14px 13px 31px -24px rgba(0,0,0,0.75);
-  box-shadow: 14px 13px 31px -10px rgba(0,0,0,0.75);
+  box-shadow: var(--shadow-1);
 }
 
 .navbar_item.contact::after{
@@ -227,13 +227,74 @@ height:400px;
   width:100%;
   color:var(--color-gray);
 }
-/* .section_4_list_item:hover{
-  color:var(--color-gray)
-} */
-.section_5_container{
+/* g2g projects section */
+.g2g_projects_container{
+  position: relative;
+  margin-top:40px;
+  overflow: hidden;
+}
+
+.g2g_projects_h1{
+  
+  font-size: 1.7rem;;
+  font-family: 'noto sans';
+  font-weight: 400;
+  text-align: center;
+  border-bottom: var(--dotted-line);
+  color:var(--color-black);
+  border-radius: 15px 15px 0  0;
+  padding-bottom: 20px;
+  margin: 20px 0;
+}
+.scroll_button_container{
+  position:absolute;
+  width:100vw;
+ top:50%;
+ 
+  /* background-color: red; */
+}
+.scroll_button{
   margin:0 20px;
-  height:400px;
-  background-color: whites;
+  font-size: 5rem;
+  font-weight: 700;
+  opacity: 30%;
+  cursor: pointer;
+  z-index: 1;
+}
+.scroll_button:hover{
+  opacity:70%;
+}
+
+.scroll_button_box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.g2g_projects_box{
+  margin:30px 0;
+  padding:50px 30px;
+  display:inline-flex;
+  justify-content: space-between;
+  gap:20px;
+  white-space: nowrap;
+  
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+
+/* Card Box */
+
+.card_container{
+  background-color: var(--color-white);
+  border-radius: 15px;
+  width:300px;
+  height:300px;
+  box-shadow: var(--shadow-2);
+}
+.card_container:hover{
+  transform: scale(103%);
+  transition: all 0.5s;
 }
 
 
@@ -250,15 +311,19 @@ footer{
   border-top:1px solid var(--color-gray-bright)
 }
 
+
 /* Responsible screen size  */
 
+@media screen and (max-width:600px){
+  .section_first_img{
+    width:200px;
+  }
+}
 @media  screen and (max-width:478px) {
   .navbar_item{
     padding:5px 5px;
   }
-  .section_first_img{
-    width:200px;
-  }
+
   .red_bubble{
     font-size: 0.5rem;
   }
@@ -282,6 +347,30 @@ footer{
   }
 }
 
+
+/* Footer */
+
+.footer_box{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:var(--color-gray)
+}
+.footer_contact{
+  letter-spacing: 3px;
+  font-weight: 500;
+  padding:10px 0;
+}
+.last_text{
+  font-size: .9rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
 /* event top box */
 
 .event_container{
@@ -297,3 +386,5 @@ footer{
   padding:3px 10px; */
   
 }
+
+

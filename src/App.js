@@ -1,7 +1,7 @@
 import g2g_projects from "./g2g_projects.js";
 import "./App.css";
 import { Routes, Route, useNavigate, Link, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   let [logoColor, setLogoColor] = useState("rgb(255, 255, 255)");
@@ -16,6 +16,27 @@ function App() {
     console.log(newColor);
     setLogoColor(newColor);
   };
+  const scrollableDivRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollableDivRef.current) {
+      scrollableDivRef.current.scrollBy({
+        left: -100, // 스크롤 양
+        behavior: "smooth", // 부드러운 스크롤
+      });
+      // console.log(scrollableDivRef.current.scrollBy);
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollableDivRef.current) {
+      scrollableDivRef.current.scrollBy({
+        left: 100, // 스크롤 양
+        behavior: "smooth", // 부드러운 스크롤
+      });
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handlscroll);
 
@@ -37,12 +58,33 @@ function App() {
               <Section2 />
               <Section3 />
               <Section4 />
-              <Section5 />
-              <Footer />
+              <section className="g2g_projects_container">
+                <h1 className="g2g_projects_h1">Projects</h1>
+                <div className="scroll_button_container">
+                  <div className="scroll_button_box">
+                    <span className="scroll_button" onClick={scrollLeft}>
+                      ˂
+                    </span>
+                    <span className="scroll_button" conClick={scrollRight}>
+                      ˃
+                    </span>
+                  </div>
+                </div>
+
+                <div className="g2g_projects_box" ref={scrollableDivRef}>
+                  <Card />
+                  <Card />
+                  <Card />
+                  <Card />
+                  <Card />
+                  <Card />
+                </div>
+              </section>
             </>
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
@@ -58,11 +100,11 @@ function Header(props) {
     <header className="navbar_container">
       <div className="navbar_box">
         <div className="navbar_logo_container">
-          <Link to="/">
+          <a href="#">
             <span className="navbar_logo_title" style={{ color: props.color }}>
               LUMINA{" "}
             </span>
-          </Link>
+          </a>
           <span className="navbar_logo_subtext">Design Lab</span>
         </div>
         <ul className="navbar_items">
@@ -123,13 +165,17 @@ function Section2() {
   return (
     <section className="section second">
       <p className="section_second_p">
-        귀하께서는 사업의 <span className="bold_text">핵심적인 부분</span>에{" "}
-        <span className="bold_text">온전히 집중하세요</span>
+        <span className="bold_text">루미나</span>는 인테리어 시공 업체, 영상
+        제작 업체와 긴밀히 협력하고 있습니다.
+        <br />
+        귀하께서는 사업의 <span className="bold_text">
+          핵심적인 부분
+        </span>에 <span className="bold_text">온전히 집중하세요</span>
         <br />
         철거부터 인테리어 디자인, 인테리어 시공,
         <br />
         홍보영상, SNS 쇼츠 영상, 사진촬영, 웹사이트 제작은 <br />
-        <h3 className="right_text">루미나 디자인 랩에 맡기세요.</h3>
+        <h3 className="right_text">루미나에게 맡기세요.</h3>
       </p>
     </section>
   );
@@ -157,7 +203,7 @@ function Section4() {
                 <li>인테리어 부분 시공</li>
                 <li>목공 가벽</li>
                 <li>유럽 미장</li>
-                <li>금속 용점</li>
+                <li>금속 용접</li>
                 <li>설비 배수</li>
               </ul>
             </div>
@@ -180,13 +226,7 @@ function Section4() {
     </>
   );
 }
-function Section5() {
-  return (
-    <>
-      <div className="section_5_container"></div>
-    </>
-  );
-}
+
 function Card() {
   return (
     <>
@@ -197,8 +237,14 @@ function Card() {
 function Footer() {
   return (
     <>
-      <footer>
-        <div className="footer_box">copyright</div>
+      <footer className="footer_container">
+        <div className="footer_box">
+          {/* <h3 className="footer_contact">Contact</h3> */}
+          <p className="footer_tel">☎︎ 010-5728-4019</p>
+          <p className="last_text">
+            Copyright © 2024 Lumina Design Lab. All rights reserved.
+          </p>
+        </div>
       </footer>
     </>
   );

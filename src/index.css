@@ -9,10 +9,14 @@
 --color-gray-bright:rgb(235, 235, 235);
 --gradient-main:linear-gradient(149deg, rgba(126,122,185,1) 0%, rgba(245,182,195,1) 100%);
 --dotted-line:1px dotted rgba(188, 188, 188, 0.449);
+--shadow-1:14px 13px 31px -10px rgba(0,0,0,0.75);
+--shadow-2:5px 5px 13px 0px rgba(0, 0, 0, 0.07);
 
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family:'noto sans' 'Segoe UI', 'Roboto', 'Oxygen',
